@@ -10,13 +10,17 @@
 		98B97360C4763C6D34EC29A3 /* libPods-instagrambymeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A9266B9BF1D63CB8A3BDBB /* libPods-instagrambymeUITests.a */; };
 		AA19815A127173E321EF1571 /* libPods-instagrambyme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC3DE8EEE2ED15017563843 /* libPods-instagrambyme.a */; };
 		B20A413020F41571004EA488 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A412F20F41571004EA488 /* AppDelegate.m */; };
-		B20A413320F41571004EA488 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A413220F41571004EA488 /* ViewController.m */; };
 		B20A413620F41571004EA488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20A413420F41571004EA488 /* Main.storyboard */; };
 		B20A413820F41572004EA488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20A413720F41572004EA488 /* Assets.xcassets */; };
 		B20A413B20F41572004EA488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20A413920F41572004EA488 /* LaunchScreen.storyboard */; };
 		B20A413E20F41572004EA488 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A413D20F41572004EA488 /* main.m */; };
 		B20A414820F41572004EA488 /* instagrambymeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A414720F41572004EA488 /* instagrambymeTests.m */; };
 		B20A415320F41572004EA488 /* instagrambymeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A415220F41572004EA488 /* instagrambymeUITests.m */; };
+		B20A416720F42746004EA488 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A416620F42746004EA488 /* LoginViewController.m */; };
+		B20A417120F46813004EA488 /* PostViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A417020F46813004EA488 /* PostViewCell.m */; };
+		B20A417420F46885004EA488 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A417320F46885004EA488 /* Post.m */; };
+		B20A417720F56042004EA488 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A417620F56042004EA488 /* ComposeViewController.m */; };
+		B20A417D20F564BD004EA488 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20A417C20F564BD004EA488 /* FeedViewController.m */; };
 		F2E85B5C029FB9201F531D12 /* libPods-instagrambymeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4FBEC0F8CFEC08716E129 /* libPods-instagrambymeTests.a */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +51,6 @@
 		B20A412B20F41571004EA488 /* instagrambyme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagrambyme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20A412E20F41571004EA488 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B20A412F20F41571004EA488 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B20A413120F41571004EA488 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B20A413220F41571004EA488 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B20A413520F41571004EA488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B20A413720F41572004EA488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B20A413A20F41572004EA488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,16 @@
 		B20A414E20F41572004EA488 /* instagrambymeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instagrambymeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20A415220F41572004EA488 /* instagrambymeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = instagrambymeUITests.m; sourceTree = "<group>"; };
 		B20A415420F41572004EA488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B20A416520F42746004EA488 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B20A416620F42746004EA488 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B20A416F20F46813004EA488 /* PostViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewCell.h; sourceTree = "<group>"; };
+		B20A417020F46813004EA488 /* PostViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewCell.m; sourceTree = "<group>"; };
+		B20A417220F46885004EA488 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		B20A417320F46885004EA488 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		B20A417520F56042004EA488 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		B20A417620F56042004EA488 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		B20A417B20F564BD004EA488 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		B20A417C20F564BD004EA488 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		B2A9266B9BF1D63CB8A3BDBB /* libPods-instagrambymeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instagrambymeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8556DA3C3F8E0EF555E1C1B /* Pods-instagrambymeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagrambymeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instagrambymeUITests/Pods-instagrambymeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1AC937DEA99F10DA6CBB64B /* Pods-instagrambymeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagrambymeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagrambymeTests/Pods-instagrambymeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,10 +153,12 @@
 		B20A412D20F41571004EA488 /* instagrambyme */ = {
 			isa = PBXGroup;
 			children = (
+				B20A416B20F46541004EA488 /* Views */,
+				B20A416420F426C7004EA488 /* Models */,
+				B20A416320F426AF004EA488 /* ViewControllers */,
+				B20A416220F426A3004EA488 /* New Group */,
 				B20A412E20F41571004EA488 /* AppDelegate.h */,
 				B20A412F20F41571004EA488 /* AppDelegate.m */,
-				B20A413120F41571004EA488 /* ViewController.h */,
-				B20A413220F41571004EA488 /* ViewController.m */,
 				B20A413420F41571004EA488 /* Main.storyboard */,
 				B20A413720F41572004EA488 /* Assets.xcassets */,
 				B20A413920F41572004EA488 /* LaunchScreen.storyboard */,
@@ -170,6 +184,44 @@
 				B20A415420F41572004EA488 /* Info.plist */,
 			);
 			path = instagrambymeUITests;
+			sourceTree = "<group>";
+		};
+		B20A416220F426A3004EA488 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		B20A416320F426AF004EA488 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B20A416520F42746004EA488 /* LoginViewController.h */,
+				B20A416620F42746004EA488 /* LoginViewController.m */,
+				B20A417B20F564BD004EA488 /* FeedViewController.h */,
+				B20A417C20F564BD004EA488 /* FeedViewController.m */,
+				B20A417520F56042004EA488 /* ComposeViewController.h */,
+				B20A417620F56042004EA488 /* ComposeViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B20A416420F426C7004EA488 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B20A416F20F46813004EA488 /* PostViewCell.h */,
+				B20A417020F46813004EA488 /* PostViewCell.m */,
+				B20A417220F46885004EA488 /* Post.h */,
+				B20A417320F46885004EA488 /* Post.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B20A416B20F46541004EA488 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,9 +433,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B20A413320F41571004EA488 /* ViewController.m in Sources */,
+				B20A417120F46813004EA488 /* PostViewCell.m in Sources */,
+				B20A416720F42746004EA488 /* LoginViewController.m in Sources */,
+				B20A417D20F564BD004EA488 /* FeedViewController.m in Sources */,
 				B20A413E20F41572004EA488 /* main.m in Sources */,
 				B20A413020F41571004EA488 /* AppDelegate.m in Sources */,
+				B20A417420F46885004EA488 /* Post.m in Sources */,
+				B20A417720F56042004EA488 /* ComposeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

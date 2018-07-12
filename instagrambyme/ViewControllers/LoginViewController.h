@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LoginViewController.h
 //  instagrambyme
 //
 //  Created by Nihal Riyadh Jemal on 7/9/18.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LoginViewController : UIViewController
 
+- (void)viewDidLoad;
+
+- (void)loginUser;
 
 @end
-
