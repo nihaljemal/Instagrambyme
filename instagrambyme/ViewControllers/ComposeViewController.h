@@ -16,5 +16,6 @@
 
 @property (strong, nonatomic) UIImage* image;
 @property (strong, nonatomic) NSString* userNameLabel;
+//@property (strong, nonatomic) NSString* descriptionobject;
 
 @end

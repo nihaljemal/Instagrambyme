@@ -25,7 +25,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.chosenPicture.image = self.image;
-    self.userIDLabel.text = self.userNameLabel;
+    PFUser *user = [PFUser currentUser];
+    NSString *name = user[@"username"];
+    self.userIDLabel.text = name;
+    
+    
+    
+//    [query getObjectInBackgroundWithId:@"username" block:^(PFObject *user, NSError *error) {
+//    NSString *name = user[@"username"];
+//    self.userIDLabel.text = name;
+//    }];
+    //[query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+       
+   // }];
+   
+    
+    //self.userIDLabel.text =
+    
     // Do any additional setup after loading the view.
     
 }
@@ -41,7 +57,7 @@
 
 - (IBAction)postButtonReal:(id)sender {
      //post to parse here by calling postuser image method
-    [Post postUserImage:self.image withCaption:@"see if works" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Post postUserImage:self.image withCaption:self.descriptionView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         NSLog(@"uploaded");
     }];
     [self dismissViewControllerAnimated:NO completion:nil];

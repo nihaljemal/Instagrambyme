@@ -27,9 +27,10 @@
     
     Post *newPost = [Post new];
     newPost.image = [self getPFFileFromImage:image];
-    newPost.author = [PFUser currentUser];                         //What is happening here
+    newPost.author = [PFUser currentUser];
+    newPost.description = description;//What is happening here
     [newPost saveInBackgroundWithBlock: completion];
-    newPost.description = description;
+   
 }
 
 //getting file from image
@@ -45,6 +46,7 @@
     }
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
+
 
 
 @end

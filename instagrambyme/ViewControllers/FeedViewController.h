@@ -16,5 +16,6 @@
 -(void)logoutProcess;
 + (BOOL)isSourceTypeAvailable: (UIImagePickerControllerSourceType)sourceType;
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info;
+-(void)datarequest;
 
 @end

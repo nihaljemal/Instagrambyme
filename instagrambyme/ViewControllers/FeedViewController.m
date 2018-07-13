@@ -26,11 +26,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:refreshControl atIndex:0];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    [self datarequest];
     
+    
+    
+}
+
+-(void)datarequest{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query whereKey:@"likesCount" greaterThan:@100];
+    [query orderByDescending:@"_created_at"];
     query.limit = 20;
     
     // fetch data asynchronously
@@ -38,13 +49,14 @@
         if (posts != nil) {
             NSLog(@"done");
             self.posts = posts;
+            [self.tableView reloadData];
+            
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    [self.tableView reloadData];
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -106,6 +118,31 @@
 
 }
 
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    
+    // Create NSURL and NSURLRequest
+    
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+//                                                          delegate:nil
+//                                                     delegateQueue:[NSOperationQueue mainQueue]];
+//    session.configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+//
+//    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+//                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//
+                                                // ... Use the new data to update the data source ...
+                                                
+                                                // Reload the tableView now that there is new data
+                                                [self datarequest];
+                                                [self.tableView reloadData];
+                                                
+                                                // Tell the refreshControl to stop spinning
+                                                [refreshControl endRefreshing];
+                                                
+//                                            }];
+    
+//    [task resume];
+}
 
  #pragma mark - Navigation
  

@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import <ParseUI/ParseUI.h>
+
 
 @interface PostViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *postedPicture;
+@property (weak, nonatomic) IBOutlet PFImageView *postedPicture;
 @property (weak, nonatomic) IBOutlet UILabel *postNameTag;
 -(void)configureCell:(Post *)post;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
 
 @end

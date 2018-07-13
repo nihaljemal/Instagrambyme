@@ -7,6 +7,7 @@ target 'instagrambyme' do
 
   # Pods for instagrambyme
   pod 'Parse'
+  pod 'ParseUI'
 
   target 'instagrambymeTests' do
     inherit! :search_paths

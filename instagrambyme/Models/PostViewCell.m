@@ -7,6 +7,7 @@
 //
 
 #import "PostViewCell.h"
+#import <UIKit/UIKit.h>
 #import "Post.h"
 #import "Parse.h"
 
@@ -23,7 +24,13 @@
 }
 
 -(void)configureCell:(Post *)post{
-    
+    self.postedPicture.image = nil;
+    self.postedPicture.file = post.image;
+    [self.postedPicture loadInBackground];
+    self.postNameTag.text = @"person";
+    self.descriptionLabel.text = post[@"description"];
+    PFUser *user = [PFUser currentUser];
+    NSString *name = user[@"username"];
+    self.postNameTag.text = name;
 }
-
 @end
