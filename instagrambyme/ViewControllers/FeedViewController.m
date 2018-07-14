@@ -13,11 +13,13 @@
 #import "Post.h"
 #import "PostViewCell.h"
 #import "ComposeViewController.h"
+#import "DetailsViewController.h"
 
 @interface FeedViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray* posts;
+@property UIRefreshControl * refreshControl;
 
 
 @end
@@ -26,13 +28,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView insertSubview:refreshControl atIndex:0];
-    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+  self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(datarequest) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
+    
     [self datarequest];
     
     
@@ -50,10 +53,12 @@
             NSLog(@"done");
             self.posts = posts;
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
             
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
+        
     }];
     
 }
@@ -97,8 +102,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     self.justTaken = info[UIImagePickerControllerOriginalImage];
     //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self performSegueWithIdentifier:@"seconedSegue" sender:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+         [self performSegueWithIdentifier:@"seconedSegue" sender:nil];
+    }];
+   
 }
 
 //*****************************************LOGGING OUT**************************************************
@@ -120,38 +127,33 @@
 
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {
     
-    // Create NSURL and NSURLRequest
-    
-//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
-//                                                          delegate:nil
-//                                                     delegateQueue:[NSOperationQueue mainQueue]];
-//    session.configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-//
-//    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
-//                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//
-                                                // ... Use the new data to update the data source ...
-                                                
-                                                // Reload the tableView now that there is new data
                                                 [self datarequest];
                                                 [self.tableView reloadData];
-                                                
-                                                // Tell the refreshControl to stop spinning
                                                 [refreshControl endRefreshing];
-                                                
-//                                            }];
-    
-//    [task resume];
 }
 
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     
      UINavigationController* navigationController = [segue destinationViewController];
+     
+    if([segue.identifier isEqualToString:@"detailsSegue"]){
+        
+    UITableViewCell *tappedCell = sender;
+    NSIndexPath *tappedIndexPath = [self.tableView indexPathForCell:tappedCell];
+    Post *post = self.posts[tappedIndexPath.row];
+   
+    DetailsViewController *detailVC = [segue destinationViewController];
+        detailVC.post = post;
+
+     }
+     else if([segue.identifier  isEqualToString:@"seconedSegue"]){
      ComposeViewController* composeVC = (ComposeViewController*) navigationController.topViewController;
      composeVC.image = self.justTaken;
-     composeVC.userNameLabel = self.blah;
+         
+     }
 
      
  // Get the new view controller using [segue destinationViewController].

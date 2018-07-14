@@ -16,7 +16,7 @@
 
 @interface ComposeViewController ()
 
-@property (nonatomic, strong) PFObject *post;
+//@property (nonatomic, strong) PFObject *post;
 
 @end
 
@@ -25,9 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.chosenPicture.image = self.image;
-    PFUser *user = [PFUser currentUser];
-    NSString *name = user[@"username"];
-    self.userIDLabel.text = name;
+    self.userIDLabel.text = PFUser.currentUser.username;
+    
+    
     
     
     

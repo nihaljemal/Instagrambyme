@@ -14,24 +14,34 @@
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
-//@dynamic description;
+@dynamic caption;
 @dynamic image;
-@dynamic description;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
 
-//setting newpost parameter
-+ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )description withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
-    newPost.description = description;//What is happening here
+    newPost.caption = caption;
+    
+    //newPost.userID = self.userID;
+    //newPost.likeCount = @(0);
+    //newPost.commentCount = @(0);
+    
     [newPost saveInBackgroundWithBlock: completion];
-   
 }
+
+/*+ (void)postUserImage:(UIImage *)image withCaption:(NSString *)caption withCompletion:(PFBooleanResultBlock)completion{
+    Post *newPost = [Post new];
+    newPost.image = [self getPFFileFromImage:image];
+    newPost.author = [PFUser currentUser];
+    newPost.caption = caption;//What is happening here
+    [newPost saveInBackgroundWithBlock: completion];
+}*/
 
 //getting file from image
 + (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {

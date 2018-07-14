@@ -17,5 +17,7 @@
 -(void)configureCell:(Post *)post;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
+@property (strong, nonatomic) NSString* identity;
+//@property (strong, nonatomic) NSString* tick;
 
 @end

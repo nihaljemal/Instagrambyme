@@ -27,10 +27,12 @@
     self.postedPicture.image = nil;
     self.postedPicture.file = post.image;
     [self.postedPicture loadInBackground];
-    self.postNameTag.text = @"person";
-    self.descriptionLabel.text = post[@"description"];
+    //self.postNameTag.text = @"person";
+    self.descriptionLabel.text = post[@"caption"];
     PFUser *user = [PFUser currentUser];
     NSString *name = user[@"username"];
     self.postNameTag.text = name;
+    //self.tick = post[@"_created_at"];
+    self.identity = post[@"_id"];
 }
 @end
