@@ -15,9 +15,7 @@
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *author;
 @property (nonatomic, strong) NSString *caption;
-
 @property (nonatomic, strong) PFFile *image;
-//@property (nonatomic, strong) NSString* clock;
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 + (UIImage * _Nullable)resizeThisImage:(UIImage * _Nullable)image withSize:(CGSize)size;

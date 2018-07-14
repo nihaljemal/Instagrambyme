@@ -21,16 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //[self datarequest1];
     [self datarequest2];
     
 }
 -(void)datarequest2{
-   // PFUser *user = [PFUser currentUser];
-    
-   // NSString *name = user[@"username"];
-    //self.detailUsername.text = name;
+
     
     self.detailDescription.text = self.post.caption;
     
@@ -54,9 +49,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//- (IBAction)backTap:(id)sender {
-//    [self dismissViewControllerAnimated:NO completion:nil];
-//}
+
 
 /*
 #pragma mark - Navigation

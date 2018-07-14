@@ -30,6 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//creates a new user
 - (void)registerUser {
     // initialize a user object
     PFUser *newUser = [PFUser user];
@@ -48,6 +49,7 @@
     }];
 }
 
+//allows existing user to log in
 - (void)loginUser {
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
@@ -69,7 +71,7 @@
     [self loginUser];
 }
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -81,7 +83,7 @@
     
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
+}*/
 
 
 @end

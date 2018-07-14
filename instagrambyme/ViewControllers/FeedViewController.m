@@ -42,12 +42,12 @@
     
 }
 
+//retrievs parse data in array, reverses order
 -(void)datarequest{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"_created_at"];
     query.limit = 20;
     
-    // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             NSLog(@"done");
@@ -65,7 +65,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 //**********************************************TABLEVIEW************************************************
@@ -99,6 +99,8 @@
     
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
+
+//sets chosen image to variable
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     self.justTaken = info[UIImagePickerControllerOriginalImage];
     //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
@@ -125,13 +127,6 @@
 
 }
 
-- (void)beginRefresh:(UIRefreshControl *)refreshControl {
-    
-                                                [self datarequest];
-                                                [self.tableView reloadData];
-                                                [refreshControl endRefreshing];
-}
-
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -154,22 +149,8 @@
      composeVC.image = self.justTaken;
          
      }
-
-     
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
  }
- 
-
-//    Post *post = [Post object];
-//    post.userID = @"Hello";
-//    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-//        NSLog(@"saved");
-//    }];
-//
-//PFQuery *querry = [Post query];
-//[querry findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//    NSLog(@"done");
-//}];
 
 @end

@@ -16,8 +16,6 @@
 
 @interface ComposeViewController ()
 
-//@property (nonatomic, strong) PFObject *post;
-
 @end
 
 @implementation ComposeViewController
@@ -27,23 +25,6 @@
     [Post resizeThisImage:self.image withSize:self.image.size];
     self.chosenPicture.image = self.image;
     self.userIDLabel.text = PFUser.currentUser.username;
-    
-    
-    
-    
-    
-//    [query getObjectInBackgroundWithId:@"username" block:^(PFObject *user, NSError *error) {
-//    NSString *name = user[@"username"];
-//    self.userIDLabel.text = name;
-//    }];
-    //[query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-       
-   // }];
-   
-    
-    //self.userIDLabel.text =
-    
-    // Do any additional setup after loading the view.
     
 }
 

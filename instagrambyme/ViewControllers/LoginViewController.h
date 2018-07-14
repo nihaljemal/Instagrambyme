@@ -11,7 +11,6 @@
 @interface LoginViewController : UIViewController
 
 - (void)viewDidLoad;
-
 - (void)loginUser;
 
 @end
