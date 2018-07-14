@@ -274,7 +274,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="A9g-eI-ge4"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Compose" id="FaT-iH-0ow"/>
+                    <navigationItem key="navigationItem" title="Compose" id="FaT-iH-0ow">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="z37-Mn-zvn">
+                            <connections>
+                                <action selector="backButton:" destination="MGf-v0-Ng0" id="J5x-I4-ZYi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="chosenPicture" destination="jNt-kK-8dX" id="lzx-kX-cGK"/>
                         <outlet property="descriptionView" destination="JRb-qP-1BM" id="Aaq-Aa-wTn"/>
