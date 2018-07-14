@@ -20,5 +20,7 @@
 //@property (nonatomic, strong) NSString* clock;
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+- (UIImage * _Nullable)resizeImage:(UIImage * _Nullable)image withSize:(CGSize)size;
 
 @end
+
