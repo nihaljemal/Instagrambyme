@@ -21,11 +21,12 @@
     return @"Post";
 }
 
+
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
     
-    //image = [self resizeImage];
+   // image = [self resizeThisImage:image withSize:image.size];
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;
@@ -58,9 +59,8 @@
     }
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
-
-- (UIImage * _Nullable)resizeImage:(UIImage * _Nullable)image withSize:(CGSize)size {
-    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
++ (UIImage * _Nullable)resizeThisImage:(UIImage * _Nullable)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100 , 100)];
     
     resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
     resizeImageView.image = image;

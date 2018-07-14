@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [Post resizeThisImage:self.image withSize:self.image.size];
     self.chosenPicture.image = self.image;
     self.userIDLabel.text = PFUser.currentUser.username;
     
